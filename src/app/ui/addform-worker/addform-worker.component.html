@@ -1,0 +1,37 @@
+ <form [formGroup]= "form_workers" >
+   
+  <div class="row mb-3">
+    <div class="col-12">
+      <h5>Добавить сотрудника</h5>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control" placeholder="Имя" formControlName="name"/>
+      <div class="error"
+      *ngIf="(form_workers.get('name').touched && form_workers.get('name').invalid)">
+      <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+     </div>
+    
+
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control" placeholder="Фамилия" formControlName="surname">
+   
+      <div class="error"
+      *ngIf="(form_workers.get('surname').touched && form_workers.get('surname').invalid)">
+      <span class="badge badge-pill badge-danger">Поле не может быть пустым</span>
+     </div>
+    </div>
+
+    <div class="col-4">
+      <select class="custom-select" [(ngModel)]="type"  [ngModelOptions]="{standalone: true}">
+        <option [ngValue]="myWorkerType.programmer">Программист</option>
+        <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+        <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+        <option [ngValue]="myWorkerType.manager">Менеджер</option>
+      </select>
+    </div>
+    <div class="col-12 mt-1">
+      <button class="btn btn-outline-primary btn-sm" (click)="onAddWorker()" [hidden]="form_workers.invalid" >Add</button>
+    </div>
+  </div>
+ </form>
