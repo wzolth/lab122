@@ -48,7 +48,7 @@ export class AppComponent {
    console.log(parseInt(worker.type))
    if((worker.type<1)||(worker.type>4)||(worker.name=='')||(worker.surname=='')){
       alert("Проверьте введенные значения")
-    
+      this.onChangeWorker(worker)
    }
    worker.type--;
     
