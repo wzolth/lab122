@@ -15,7 +15,7 @@ export class AddformWorkerComponent implements OnInit {
   surname: string;
   type = 0;
 
-  
+  public mask = ['+', /[1-9]/, /[1-9]/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
   form_workers: FormGroup;
 
   
@@ -36,6 +36,7 @@ export class AddformWorkerComponent implements OnInit {
 
       name: new FormControl ("",[Validators.required,]),
       surname: new FormControl("",[Validators.required,]),
+      number: new FormControl("",[Validators.required,]),
 
     })
   }
@@ -48,6 +49,7 @@ export class AddformWorkerComponent implements OnInit {
       name: this.form_workers.value.name,
       surname: this.form_workers.value.surname,
       type: this.type,
+      number:this.form_workers.value.number
     });
   
   }

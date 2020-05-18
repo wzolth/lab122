@@ -16,6 +16,7 @@
             <th scope="row">{{ worker.id }}</th>
             <td>{{ worker.name }}</td>
             <td>{{ worker.surname }}</td>
+            <td>{{ worker.number }}</td>
             <td>
               <button
                 class="btn btn-outline-danger btn-sm"
@@ -23,14 +24,16 @@
               >
                 УДАЛИТЬ
               </button>
-              <button
+                <button
               (click)="onChangeWorker1(worker)"
                 class="btn btn-outline-danger btn-sm"
                 
                 
+                
               >
                 ИЗМЕНИТЬ
-              </button>
+              </button>  
+          
             </td>
           </tr>
         </tbody>
